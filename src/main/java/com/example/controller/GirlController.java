@@ -48,9 +48,10 @@ public class GirlController {
      * 添加一个女生
      * @return
      */
+	@ApiOperation(value = "添加一个人员,但是不知道为毛这个地方不能成功呐")
     @PostMapping(value = "/girls")
     public Object girlAdd(@Valid Girl girl, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) { 
             
         	return ResultUntil.error(-1, bindingResult.getFieldError().getDefaultMessage());
         }
